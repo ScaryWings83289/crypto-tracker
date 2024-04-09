@@ -7,6 +7,7 @@ import { CryptoContext } from "@Context/CryptoContext";
 const CryptoTable = () => {
   const cryptoContextData = useContext(CryptoContext);
   const cryptoData = cryptoContextData?.cryptoData;
+  const currency = cryptoContextData?.currency;
 
   return (
     <div className="flex flex-col mt-8 border border-gray-100 rounded">
@@ -61,7 +62,7 @@ const CryptoTable = () => {
                 <td className="py-4">
                   {new Intl.NumberFormat("en-IN", {
                     style: "currency",
-                    currency: "usd",
+                    currency,
                   }).format(coin.current_price)}
                 </td>
                 <td className="py-4">{coin.total_volume}</td>
