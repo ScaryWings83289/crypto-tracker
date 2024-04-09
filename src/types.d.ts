@@ -1,8 +1,8 @@
 type CoinReturnType = {
-    times: number;
-    currency: string;
-    percentage: number;
-  }
+  times: number;
+  currency: string;
+  percentage: number;
+};
 
 type CoinsDataType = {
   id: string;
@@ -34,4 +34,14 @@ type CoinsDataType = {
   price_change_percentage_1h_in_currency: number | null;
   price_change_percentage_24h_in_currency: number | null;
   price_change_percentage_7d_in_currency: number | null;
+};
+
+type CoinSearchDataType = {
+  id: string;
+  name: string;
+  api_symbol: string;
+  symbol: string;
+  market_cap_rank: number | null;
+  thumb: string;
+  large: string;
 };
