@@ -15,6 +15,7 @@ export default defineConfig({
       "@Src": path.resolve(__dirname, "./src"),
       "@Styles": path.resolve(__dirname, "./src/styles"),
       "@Utils": path.resolve(__dirname, "./src/utils"),
+      "@Data": path.resolve(__dirname, "./src/data"),
     },
   },
   plugins: [react(), tsconfigPaths()],

@@ -13,6 +13,7 @@
   "author": "Divyankar Bhargav <divyankarbhargav@gmail.com>",
   "dependencies": {
     "@types/node": "^20.12.2",
+    "axios": "^1.6.8",
     "lodash.debounce": "^4.0.8",
     "path": "^0.12.7",
     "react": "^18.2.0",
