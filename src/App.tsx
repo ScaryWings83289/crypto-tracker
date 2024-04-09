@@ -1,12 +1,9 @@
-//* Packages Imports */
-
-//* Assets Imports */
+//* Components Imports */
+import Home from "@Pages/Home";
 
 //* Styles Imports */
 import "@Src/App.css";
 
-function App() {
-  return <h1 className="text-red-700">Vite + React</h1>;
-}
+const App = () => <Home />;
 
 export default App;
