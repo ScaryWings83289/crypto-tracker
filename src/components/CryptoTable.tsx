@@ -1,5 +1,6 @@
 //* Packages Imports */
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 //* Components Imports */
 import Pagination from "@Components/Pagination";
@@ -59,10 +60,18 @@ const CryptoTable = () => {
                         src={coin.image}
                         alt={coin.name}
                       />
-                      <span>{coin.symbol}</span>
+                      <span>
+                        <Link to={`/${coin.id}`} className="cursor-pointer">
+                          {coin.symbol}
+                        </Link>
+                      </span>
                     </button>
                   </td>
-                  <td className="py-4">{coin.name}</td>
+                  <td className="py-4">
+                    <Link to={`/${coin.id}`} className="cursor-pointer">
+                      {coin.name}
+                    </Link>
+                  </td>
                   <td className="py-4">
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
@@ -117,7 +126,11 @@ const CryptoTable = () => {
       <div className="flex items-center justify-between mt-4 capitalize h-[2rem]">
         <span>
           Data provided by{" "}
-          <a className="text-cyan" href="https://www.coingecko.com/" target="_blank">
+          <a
+            className="text-cyan"
+            href="https://www.coingecko.com/"
+            target="_blank"
+          >
             CoinGecko
           </a>
         </span>

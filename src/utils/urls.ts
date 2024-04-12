@@ -5,3 +5,5 @@ export const CoinsPath = `${BASE_PATH}/coins/markets`;
 export const CoinsListPath = `${BASE_PATH}/coins/list`;
 
 export const SearchPath = `${BASE_PATH}/search`;
+
+export const CoinPath = `${BASE_PATH}/coins`;

@@ -11,8 +11,8 @@ import axios from "axios";
 import { AxiosError } from "axios";
 
 //* Utils Imports */
-import { CoinsPath, CoinsListPath, SearchPath } from "@Utils/urls";
-import { CryptoCoinData, CryptoSearchData } from "@Data/CryptoData";
+import { CoinPath, CoinsPath, CoinsListPath, SearchPath } from "@Utils/urls";
+import { CRYPTO_COIN_DATA, CRYPTO_SEARCH_DATA, DUMMY_COIN_DATA } from "@Data/CryptoData";
 
 type CryptoContextType = {
   cryptoData: CoinsDataType[];
@@ -30,6 +30,8 @@ type CryptoContextType = {
   handleReset: () => void;
   perPage: number;
   setPerPage: Dispatch<SetStateAction<number>>;
+  coinData: CoinDataType | null;
+  getCoinData: (coinId: string) => void;
 };
 
 //* Create context object
@@ -39,6 +41,7 @@ export const CryptoContext = createContext<CryptoContextType | null>(null);
 export const CryptoProvider = ({ children }: { children: ReactElement }) => {
   const [cryptoData, setCryptoData] = useState<CoinsDataType[]>([]);
   const [searchData, setSearchData] = useState<CoinSearchDataType[]>([]);
+  const [coinData, setCoinData] = useState<CoinDataType | null>(null);
   const [coinSearch, setCoinSearch] = useState<string>("");
   const [currency, setCurrency] = useState<string>("usd");
   const [sortBy, setSortBy] = useState<string>("market_cap_desc");
@@ -55,7 +58,7 @@ export const CryptoProvider = ({ children }: { children: ReactElement }) => {
       setCryptoData(data);
     } catch (error: AxiosError | unknown) {
       if ((error as AxiosError).message === "Network Error") {
-        setCryptoData(CryptoCoinData);
+        setCryptoData(CRYPTO_COIN_DATA);
       }
       console.error(error);
     }
@@ -68,7 +71,7 @@ export const CryptoProvider = ({ children }: { children: ReactElement }) => {
       setSearchData(data.coins);
     } catch (error: AxiosError | unknown) {
       if ((error as AxiosError).message === "Network Error") {
-        setSearchData(CryptoSearchData);
+        setSearchData(CRYPTO_SEARCH_DATA);
       }
       console.error(error);
     }
@@ -82,6 +85,19 @@ export const CryptoProvider = ({ children }: { children: ReactElement }) => {
     } catch (error: AxiosError | unknown) {
       if ((error as AxiosError).message === "Network Error") {
         setTotalPages(250);
+      }
+      console.error(error);
+    }
+  };
+
+  //* Fetch coin data
+  const getCoinData = async (coinId: string) => {
+    try {
+      const { data } = await axios.get(`${CoinPath}/${coinId}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=true&sparkline=false`);
+      setCoinData(data);
+    } catch (error: AxiosError | unknown) {
+      if ((error as AxiosError).message === "Network Error") {
+        setCoinData(DUMMY_COIN_DATA);
       }
       console.error(error);
     }
@@ -127,6 +143,8 @@ export const CryptoProvider = ({ children }: { children: ReactElement }) => {
         handleReset,
         perPage,
         setPerPage,
+        coinData,
+        getCoinData,
       }}
     >
       {children}

@@ -8,6 +8,7 @@ import App from "@Src/App";
 import Crypto from "@Pages/Crypto";
 import Trending from "@Pages/Trending";
 import Saved from "@Pages/Saved";
+import CryptoDetails from "@Components/CryptoDetails";
 
 //* Styles Imports */
 import "@Src/index.css";
@@ -21,6 +22,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Crypto />,
+        children: [
+          {
+            path: ":coinId",
+            element: <CryptoDetails />,
+          },
+        ],
       },
       {
         path: "/trending",
