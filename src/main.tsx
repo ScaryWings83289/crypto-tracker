@@ -8,7 +8,7 @@ import App from "@Src/App";
 import Crypto from "@Pages/Crypto";
 import Trending from "@Pages/Trending";
 import Saved from "@Pages/Saved";
-import CryptoDetails from "@Components/CryptoDetails";
+import CryptoDetails from "@Pages/CryptoDetails";
 
 //* Styles Imports */
 import "@Src/index.css";

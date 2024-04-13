@@ -159,3 +159,36 @@ type CoinDataType = {
   status_updates: number[];
   last_updated: string;
 };
+
+type HighLowIndicatorPropsType = {
+  currentPrice: number;
+  high: number;
+  low: number;
+}
+
+type PricesDataType = {
+  prices: Array<Array<number>>;
+  market_caps: Array<Array<number>>;
+  total_volumes: Array<Array<number>>;
+};
+
+type ChartFilterType = "prices" | "market_caps" | "total_volumes";
+
+type ChartData = {
+  date: string;
+  [x: ChartFilterType]: number;
+};
+
+type ChartComponentPropsType = {
+  data: ChartData[];
+  currency: string;
+  type: ChartFilterType;
+}
+
+type CustomTooltipPropsType = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  payload: any[];
+  label: string;
+  active: boolean;
+  currency: string;
+}
