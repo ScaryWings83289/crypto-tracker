@@ -11,8 +11,12 @@ import axios from "axios";
 import { AxiosError } from "axios";
 
 //* Utils Imports */
-import { CoinPath, CoinsPath, CoinsListPath, SearchPath } from "@Utils/urls";
-import { CRYPTO_COIN_DATA, CRYPTO_SEARCH_DATA, DUMMY_COIN_DATA } from "@Data/CryptoData";
+import { CoinPath, CoinsPath, SearchPath } from "@Utils/urls";
+import {
+  CRYPTO_COIN_DATA,
+  CRYPTO_SEARCH_DATA,
+  DUMMY_COIN_DATA,
+} from "@Data/CryptoData";
 
 type CryptoContextType = {
   cryptoData: CoinsDataType[];
@@ -79,21 +83,26 @@ export const CryptoProvider = ({ children }: { children: ReactElement }) => {
 
   //* Fetch coins list data
   const getCoinsList = async () => {
-    try {
-      const { data } = await axios.get(CoinsListPath);
-      setTotalPages(Math.ceil(data.length / perPage));
-    } catch (error: AxiosError | unknown) {
-      if ((error as AxiosError).message === "Network Error") {
-        setTotalPages(250);
-      }
-      console.error(error);
-    }
+    setCryptoData([]);
+    setTotalPages(13220);
+    // try {
+    //   const { data } = await axios.get(CoinsListPath);
+    //   setTotalPages(Math.ceil(data.length / perPage));
+    // } catch (error: AxiosError | unknown) {
+    //   if ((error as AxiosError).message === "Network Error") {
+    //     setTotalPages(250);
+    //   }
+    //   console.error(error);
+    // }
   };
 
   //* Fetch coin data
   const getCoinData = async (coinId: string) => {
+    setCoinData(null);
     try {
-      const { data } = await axios.get(`${CoinPath}/${coinId}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=true&sparkline=false`);
+      const { data } = await axios.get(
+        `${CoinPath}/${coinId}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=true&sparkline=false`
+      );
       setCoinData(data);
     } catch (error: AxiosError | unknown) {
       if ((error as AxiosError).message === "Network Error") {
@@ -108,22 +117,13 @@ export const CryptoProvider = ({ children }: { children: ReactElement }) => {
     setPage(1);
     setCoinSearch("");
     setCurrency("usd");
-  }
+  };
 
   useEffect(() => {
-    if (
-      cryptoData.length === 0 ||
-      coinSearch.length > 0 ||
-      currency ||
-      sortBy ||
-      page ||
-      perPage
-    ) {
-      getCryptoData();
-      getCoinsList();
-    }
+    getCryptoData();
+    getCoinsList();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cryptoData.length, coinSearch, currency, sortBy, page, perPage]);
+  }, [coinSearch, currency, sortBy, page, perPage]);
 
   return (
     <CryptoContext.Provider
