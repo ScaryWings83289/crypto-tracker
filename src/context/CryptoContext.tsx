@@ -1,12 +1,5 @@
 //* Packages Imports */
-import {
-  createContext,
-  Dispatch,
-  ReactElement,
-  SetStateAction,
-  useEffect,
-  useState,
-} from "react";
+import { createContext, ReactElement, useEffect, useState } from "react";
 import axios from "axios";
 import { AxiosError } from "axios";
 
@@ -17,26 +10,6 @@ import {
   CRYPTO_SEARCH_DATA,
   DUMMY_COIN_DATA,
 } from "@Data/CryptoData";
-
-type CryptoContextType = {
-  cryptoData: CoinsDataType[];
-  searchData: CoinSearchDataType[];
-  getSearchData: (search: string) => void;
-  setCoinSearch: Dispatch<SetStateAction<string>>;
-  setSearchData: Dispatch<SetStateAction<CoinSearchDataType[]>>;
-  currency: string;
-  setCurrency: Dispatch<SetStateAction<string>>;
-  sortBy: string;
-  setSortBy: Dispatch<SetStateAction<string>>;
-  page: number;
-  setPage: Dispatch<SetStateAction<number>>;
-  totalPages: number;
-  handleReset: () => void;
-  perPage: number;
-  setPerPage: Dispatch<SetStateAction<number>>;
-  coinData: CoinDataType | null;
-  getCoinData: (coinId: string) => void;
-};
 
 //* Create context object
 export const CryptoContext = createContext<CryptoContextType | null>(null);

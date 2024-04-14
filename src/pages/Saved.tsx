@@ -70,11 +70,11 @@ const Saved = () => {
           <table className="w-full table-auto">
             <thead className="capitalize text-base text-gray-100 font-medium border-b border-gray-100 ">
               <tr>
-                <th className="py-1 ">asset</th>
-                <th className="py-1 sm:table-cell hidden">name</th>
-                <th className="py-1">price</th>
-                <th className="py-1 sm:table-cell hidden">total volume</th>
-                <th className="py-1 sm:table-cell hidden">market cap change</th>
+                <th className="py-1 ">Asset</th>
+                <th className="py-1 sm:table-cell hidden">Name</th>
+                <th className="py-1">Price</th>
+                <th className="py-1 sm:table-cell hidden">Total volume</th>
+                <th className="py-1 sm:table-cell hidden">Market cap change</th>
                 <th className="py-1 sm:table-cell hidden">1H</th>
                 <th className="py-1 sm:table-cell hidden">24H</th>
                 <th className="py-1 sm:table-cell hidden">7D</th>

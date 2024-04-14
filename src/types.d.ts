@@ -240,7 +240,7 @@ type TrendingNftDataType = {
     sparkline: string;
     content: string | null;
   };
-}
+};
 
 type TrendingCategoriesType = {
   id: number;
@@ -255,5 +255,38 @@ type TrendingCategoriesType = {
     total_volume_btc: number;
     market_cap_change_percentage_24h: Record<string, number>;
     sparkline: string;
-  },
+  };
+};
+
+type CryptoContextType = {
+  cryptoData: CoinsDataType[];
+  searchData: CoinSearchDataType[];
+  getSearchData: (search: string) => void;
+  setCoinSearch: Dispatch<SetStateAction<string>>;
+  setSearchData: Dispatch<SetStateAction<CoinSearchDataType[]>>;
+  currency: string;
+  setCurrency: Dispatch<SetStateAction<string>>;
+  sortBy: string;
+  setSortBy: Dispatch<SetStateAction<string>>;
+  page: number;
+  setPage: Dispatch<SetStateAction<number>>;
+  totalPages: number;
+  handleReset: () => void;
+  perPage: number;
+  setPerPage: Dispatch<SetStateAction<number>>;
+  coinData: CoinDataType | null;
+  getCoinData: (coinId: string) => void;
+};
+
+type TrendingContextType = {
+  trendData: TrendingCoinDataType[];
+  handleResetTrending: () => void;
+};
+
+type StorageContextType = {
+  savedCoins: string[];
+  handleSavedCoin: (coinId: string) => void;
+  handleRemoveCoin: (coinId: string) => void;
+  savedData: CoinsDataType[];
+  handleSaveReset: () => void;
 };

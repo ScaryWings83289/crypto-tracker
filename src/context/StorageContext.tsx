@@ -18,14 +18,6 @@ import { DUMMY_SAVED_DATA } from "@Data/CryptoData";
 //* Context Imports */
 import { CryptoContext } from "@Context/CryptoContext";
 
-type StorageContextType = {
-  savedCoins: string[];
-  handleSavedCoin: (coinId: string) => void;
-  handleRemoveCoin: (coinId: string) => void;
-  savedData: CoinsDataType[];
-  handleSaveReset: () => void;
-};
-
 //* Create context object
 export const StorageContext = createContext<StorageContextType | null>(null);
 

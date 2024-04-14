@@ -7,11 +7,6 @@ import { AxiosError } from "axios";
 import { TrendingPath } from "@Utils/urls";
 import { DUMMY_TRENDING_DATA } from "@Data/CryptoData";
 
-type TrendingContextType = {
-  trendData: TrendingCoinDataType[];
-  handleResetTrending: () => void;
-};
-
 //* Create context object
 export const TrendingContext = createContext<TrendingContextType | null>(null);
 
