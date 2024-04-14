@@ -1,5 +1,5 @@
 //* Crypto Coins Data
-export const CRYPTO_COIN_DATA = [
+export const CRYPTO_COIN_DATA: CoinsDataType[] = [
   {
     id: "bitcoin",
     symbol: "btc",
@@ -391,7 +391,7 @@ export const CRYPTO_COIN_DATA = [
 ];
 
 //* Crypto Search Data
-export const CRYPTO_SEARCH_DATA = [
+export const CRYPTO_SEARCH_DATA: CoinSearchDataType[] = [
   {
     id: "bitcoin",
     name: "Bitcoin",
@@ -646,7 +646,7 @@ export const CRYPTO_SEARCH_DATA = [
 ];
 
 //* Sort By Filter Data
-export const SORT_OPTIONS = [
+export const SORT_OPTIONS: SortOptionsType[] = [
   { label: "Market Cap Desc", value: "market_cap_desc" },
   { label: "Market Cap Asc", value: "market_cap_asc" },
   { label: "Volume Desc", value: "volume_desc" },
@@ -656,7 +656,7 @@ export const SORT_OPTIONS = [
 ];
 
 //* Dummy Coin Data
-export const DUMMY_COIN_DATA = {
+export const DUMMY_COIN_DATA: CoinDataType = {
   id: "bitcoin",
   symbol: "btc",
   name: "Bitcoin",
@@ -2245,7 +2245,7 @@ export const DUMMY_COIN_DATA = {
 };
 
 //* Dummy Prices Data
-export const DUMMY_PRICES_DATA = {
+export const DUMMY_PRICES_DATA: PricesDataType = {
   prices: [
     [1712448000000, 69000.6499164776],
     [1712534400000, 69401.97360911008],
@@ -2279,7 +2279,7 @@ export const DUMMY_PRICES_DATA = {
 };
 
 //* Dummy Trending Data
-export const DUMMY_TRENDING_DATA = [
+export const DUMMY_TRENDING_DATA: TrendingCoinDataType[] = [
   {
     item: {
       id: "gala",
@@ -3675,7 +3675,7 @@ export const DUMMY_TRENDING_DATA = [
 ];
 
 //* Dummy Saved Data
-export const DUMMY_SAVED_DATA = [
+export const DUMMY_SAVED_DATA: CoinsDataType[] = [
   {
     id: "bitcoin",
     symbol: "btc",
