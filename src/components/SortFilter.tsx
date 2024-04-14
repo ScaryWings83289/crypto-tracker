@@ -27,7 +27,7 @@ const SortFilter = () => {
         className="rounded bg-gray-200 sm:text-base text-sm pl-2 pr-10 py-1.5 focus:outline-0 text-transparent appearance-none capitalize leading-4 w-full sm:w-48"
         onChange={handleSortByChange}
       >
-        {SORT_OPTIONS.map(({ label, value }) => (
+        {SORT_OPTIONS.map(({ label, value }: SortOptionsType) => (
           <option className="sm:text-base text-sm" key={value} value={value}>
             {label}
           </option>

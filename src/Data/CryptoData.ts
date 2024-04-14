@@ -646,7 +646,7 @@ export const CRYPTO_SEARCH_DATA: CoinSearchDataType[] = [
 ];
 
 //* Sort By Filter Data
-export const SORT_OPTIONS = [
+export const SORT_OPTIONS: SortOptionsType[] = [
   { label: "Market Cap Desc", value: "market_cap_desc" },
   { label: "Market Cap Asc", value: "market_cap_asc" },
   { label: "Volume Desc", value: "volume_desc" },

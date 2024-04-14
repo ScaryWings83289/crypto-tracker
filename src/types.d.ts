@@ -290,3 +290,9 @@ type StorageContextType = {
   savedData: CoinsDataType[];
   handleSaveReset: () => void;
 };
+
+
+type SortOptionsType = {
+  label: string;
+  value: string;
+}
