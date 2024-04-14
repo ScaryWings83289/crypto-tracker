@@ -8,7 +8,7 @@
       "@Pages/*": ["./src/pages/*"],
       "@Src/*": ["./src/*"],
       "@Utils/*": ["./src/utils/*"],
-      "@Data/*": ["./src/data/*"],
+      "@Data/*": ["./src/data/*"]
     },
     "target": "ES2020",
     "useDefineForClassFields": true,
