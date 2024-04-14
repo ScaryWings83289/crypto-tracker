@@ -22,7 +22,7 @@ const CurrencyFilter = () => {
 
   return (
     <form
-      className="relative flex items-center font-nunito mr-12"
+      className="relative flex items-center font-nunito md:mr-12 mr-1"
       onSubmit={handleCurrencyChange}
     >
       <label
@@ -32,7 +32,7 @@ const CurrencyFilter = () => {
         Currency
       </label>
       <input
-        className="w-16 rounded bg-gray-200 placeholder:text-gray-100 pl-2 required outline-0 border border-transparent focus:border-cyan leading-4"
+        className="w-16 rounded bg-gray-200 placeholder:text-gray-100  placeholder:text-base required outline-0  border border-transparent focus:border-cyan leading-4 sm:text-base text-sm sm:p-0 sm:pl-2 p-1"
         type="text"
         name="currency"
         placeholder="usd"

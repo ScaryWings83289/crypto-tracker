@@ -84,7 +84,7 @@ export const CryptoProvider = ({ children }: { children: ReactElement }) => {
   //* Fetch coins list data
   const getCoinsList = async () => {
     setCryptoData([]);
-    setTotalPages(13220);
+    setTotalPages(1317);
     // try {
     //   const { data } = await axios.get(CoinsListPath);
     //   setTotalPages(Math.ceil(data.length / perPage));

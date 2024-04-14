@@ -64,20 +64,20 @@ const Saved = () => {
   const handleSaveReset = storageContextData?.handleSaveReset as () => void;
 
   return (
-    <section className="w-[80%] h-full flex flex-col mt-16 mb-24 relative">
-      <div className="w-full min-h-[60vh] py-8  border border-gray-100 rounded">
+    <section className="xs:w-[80%] w-[90%] h-full flex flex-col  mb-24 mt-16 relative">
+      <div className="flex flex-col  border border-gray-100 rounded   min-h-[60vh] ">
         {savedData.length > 0 ? (
           <table className="w-full table-auto">
             <thead className="capitalize text-base text-gray-100 font-medium border-b border-gray-100 ">
               <tr>
                 <th className="py-1 ">asset</th>
-                <th className="py-1">name</th>
+                <th className="py-1 sm:table-cell hidden">name</th>
                 <th className="py-1">price</th>
-                <th className="py-1">total volume</th>
-                <th className="py-1">market cap change</th>
-                <th className="py-1">1H</th>
-                <th className="py-1">24H</th>
-                <th className="py-1">7D</th>
+                <th className="py-1 sm:table-cell hidden">total volume</th>
+                <th className="py-1 sm:table-cell hidden">market cap change</th>
+                <th className="py-1 sm:table-cell hidden">1H</th>
+                <th className="py-1 sm:table-cell hidden">24H</th>
+                <th className="py-1 sm:table-cell hidden">7D</th>
               </tr>
             </thead>
             <tbody>
@@ -102,7 +102,7 @@ const Saved = () => {
                     </span>
                   </td>
 
-                  <td className="py-4 cursor-pointer">
+                  <td className="py-4 cursor-pointer sm:table-cell hidden">
                     <Link to={`${coin.id}`} className="cursor-pointer">
                       {coin.name}
                     </Link>
@@ -115,13 +115,13 @@ const Saved = () => {
                     }).format(coin.current_price)}
                   </td>
 
-                  <td className="py-4">{coin.total_volume}</td>
+                  <td className="py-4 sm:table-cell hidden">{coin.total_volume}</td>
 
                   <td
                     className={
                       coin.market_cap_change_percentage_24h < 0
-                        ? "py-4 text-red"
-                        : "py-4 text-green"
+                        ? "py-4 sm:table-cell hidden text-red"
+                        : "py-4 sm:table-cell hidden text-green"
                     }
                   >
                     {Number(coin.market_cap_change_percentage_24h).toFixed(2)}%
@@ -131,8 +131,8 @@ const Saved = () => {
                     className={
                       (coin.price_change_percentage_1h_in_currency as number) <
                       0
-                        ? "py-4 text-red"
-                        : "py-4 text-green"
+                        ? "py-4 sm:table-cell hidden text-red"
+                        : "py-4 sm:table-cell hidden text-green"
                     }
                   >
                     {Number(
@@ -145,8 +145,8 @@ const Saved = () => {
                     className={
                       (coin.price_change_percentage_24h_in_currency as number) <
                       0
-                        ? "py-4 text-red"
-                        : "py-4 text-green"
+                        ? "py-4 sm:table-cell hidden text-red"
+                        : "py-4 sm:table-cell hidden text-green"
                     }
                   >
                     {Number(
@@ -159,8 +159,8 @@ const Saved = () => {
                     className={
                       (coin.price_change_percentage_7d_in_currency as number) <
                       0
-                        ? "py-4 text-red"
-                        : "py-4 text-green"
+                        ? "py-4 sm:table-cell hidden text-red"
+                        : "py-4 sm:table-cell hidden text-green"
                     }
                   >
                     {Number(

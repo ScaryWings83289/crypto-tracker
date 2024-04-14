@@ -7,7 +7,6 @@
       "@Context/*": ["./src/context/*"],
       "@Pages/*": ["./src/pages/*"],
       "@Src/*": ["./src/*"],
-      "@Styles/*": ["./src/styles/*"],
       "@Utils/*": ["./src/utils/*"],
       "@Data/*": ["src/data/*"],
     },

@@ -41,11 +41,11 @@ const SearchInput = ({
   return (
     <>
       <form
-        className="w-96 relative flex items-center ml-7 font-nunito"
+        className="xl:w-96 lg:w-60 w-full relative flex items-center lg:ml-7 font-nunito"
         onSubmit={handleSearchSubmit}
       >
         <input
-          className="w-full rounded bg-gray-200 placeholder:text-gray-100 pl-2 required outline-0 border border-transparent focus:border-cyan"
+          className="w-full rounded bg-gray-200 placeholder:text-gray-100 pl-2 placeholder:text-base required outline-0 border border-transparent focus:border-cyan"
           type="text"
           name="search"
           placeholder="Search here..."
@@ -59,7 +59,7 @@ const SearchInput = ({
 
       {Array.isArray(cryptoContextData?.searchData) &&
         cryptoContextData?.searchData.length > 0 && (
-          <ul className="absolute top-11 right-0 w-96 h-96 rounded overflow-x-hidden py-2 bg-gray-200 bg-opacity-60 backdrop-blur-md scrollbar-thin scrollbar-thumb-gray-100 scrollbar-track-gray-200">
+          <ul className="absolute top-11 right-0 lg:w-96 w-full bg-gray-200 rounded overflow-x-hidden  py-2  backdrop-filter backdrop-blur-md bg-opacity-60  scrollbar-thin scrollbar-thumb-gray-100 scrollbar-track-gray-200  z-10 h-96">
             {cryptoContextData?.searchData ? (
               cryptoContextData?.searchData.map((coin: CoinSearchDataType) => (
                 <li

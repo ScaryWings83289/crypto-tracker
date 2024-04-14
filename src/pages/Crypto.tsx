@@ -6,7 +6,7 @@ import CryptoTable from "@Components/CryptoTable";
 import Filters from "@Components/Filters";
 
 const Crypto = () => (
-  <section className="w-[80%] h-full flex flex-col mt-16 mb-24 relative">
+  <section className="xs:w-[80%] w-[90%]  h-full flex flex-col  mb-24 lg:mt-16 mt-8 relative">
     <Filters />
     <CryptoTable />
     <Outlet />

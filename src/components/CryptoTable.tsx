@@ -53,16 +53,6 @@ const SavedCoinButton = ({ data }: { data: CoinsDataType }) => {
           </clipPath>
         </defs>
       </svg>
-      <img
-        className="w-[1.2rem] h-[1.2rem] mx-1.5"
-        src={data.image}
-        alt={data.name}
-      />
-      <span>
-        <Link to={`/${data.id}`} className="cursor-pointer">
-          {data.symbol}
-        </Link>
-      </span>
     </button>
   );
 };
@@ -74,16 +64,16 @@ const CryptoTable = () => {
 
   return (
     <>
-      <div className="flex flex-col mt-8 border border-gray-100 rounded">
+      <div className="flex flex-col mt-9 border border-gray-100 rounded">
         {Array.isArray(cryptoData) && cryptoData.length > 0 ? (
           <table className="w-full table-auto">
             <thead className="capitalize text-base text-gray-100 font-medium border-b border-gray-100">
               <tr>
-                <th className="py-1">asset</th>
-                <th className="py-1">name</th>
-                <th className="py-1">price</th>
-                <th className="py-1">total volume</th>
-                <th className="py-1">market cap change</th>
+                <th className="py-1">Asset</th>
+                <th className="py-1 sm:table-cell hidden">Name</th>
+                <th className="py-1">Price</th>
+                <th className="py-1 md:table-cell hidden">Total Volume</th>
+                <th className="py-1 sm:table-cell hidden">Market cap change</th>
                 <th className="py-1 lg:table-cell hidden">1H</th>
                 <th className="py-1 lg:table-cell hidden">24H</th>
                 <th className="py-1 lg:table-cell hidden">7D</th>
@@ -93,12 +83,22 @@ const CryptoTable = () => {
               {cryptoData.map((coin: CoinsDataType) => (
                 <tr
                   key={coin.id}
-                  className="text-center text-base border-b border-gray-100 hover:bg-gray-200 last:border-b-0"
+                  className="text-center text-base border-b border-gray-100  hover:bg-gray-200 last:border-b-0"
                 >
-                  <td className="py-4 flex items-center uppercase">
+                  <td className="py-4 uppercase flex items-center">
                     <SavedCoinButton data={coin} />
+                    <img
+                      className="w-[1.2rem] h-[1.2rem] mx-1.5"
+                      src={coin.image}
+                      alt={coin.name}
+                    />
+                    <span>
+                      <Link to={`/${coin.id}`} className="cursor-pointer">
+                        {coin.symbol}
+                      </Link>
+                    </span>
                   </td>
-                  <td className="py-4">
+                  <td className="py-4 cursor-pointer sm:table-cell hidden">
                     <Link to={`/${coin.id}`} className="cursor-pointer">
                       {coin.name}
                     </Link>
@@ -109,8 +109,8 @@ const CryptoTable = () => {
                       currency,
                     }).format(coin.current_price)}
                   </td>
-                  <td className="py-4">{coin.total_volume}</td>
-                  <td className="py-4">{coin.market_cap_change_24h}%</td>
+                  <td className="py-4 sm:table-cell hidden">{coin.total_volume}</td>
+                  <td className="py-4 sm:table-cell hidden">{coin.market_cap_change_24h}%</td>
                   <td
                     className={`${
                       (coin.price_change_percentage_1h_in_currency as number) >
@@ -162,7 +162,7 @@ const CryptoTable = () => {
         )}
       </div>
 
-      <div className="flex items-center justify-between mt-4 capitalize h-[2rem]">
+      <div className="flex md:flex-row flex-col items-center justify-between mt-4 capitalize h-[2rem]">
         <span>
           Data provided by{" "}
           <a

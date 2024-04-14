@@ -13,14 +13,14 @@ const Filters = () => {
   const cryptoContextData = useContext(CryptoContext);
 
   return (
-    <div className="w-full h-12 border-2 border-gray-100 rounded-lg flex items-center justify-between relative">
+    <div className="w-full lg:h-12 h-full lg:border-2 rounded-lg border-solid lg:border-gray-100 border-0 flex lg:flex-row flex-col lg:items-center lg:justify-between relative align-start justify-between">
       <Searchbar />
-      <div className="flex mr-7">
+      <div className="flex lg:mr-7 justify-between mt-4 lg:mt-0 sm:flex-row flex-col relative">
         <CurrencyFilter />
         <SortFilter />
 
         <button
-          className="w-[2rem] ml-4 hover:scale-110 transition-all transition-ease relatibe"
+          className="w-[2rem] ml-4 hover:scale-110 transition-all transition-ease absolute right-0 top-0 sm:relative"
           onClick={cryptoContextData?.handleReset}
         >
           <svg

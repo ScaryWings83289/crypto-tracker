@@ -11,7 +11,7 @@ const TrendingCoinCard = ({ data }: { data: TrendingCoinDataType }) => {
 
   return (
     <div
-      className="w-[40%] bg-gray-200 mb-12 last:mb-0 rounded-lg p-4 relative cursor-pointer hover:bg-gray-100 hover:bg-opacity-40"
+      className="lg:w-[40%] sm:w-[60%] w-[90%] bg-gray-200 mb-12 last:mb-0 rounded-lg p-4 relative cursor-pointer hover:bg-gray-100 hover:bg-opacity-40"
       onClick={() => getCoinDetails(coin.id)}
     >
       {coin ? (
@@ -54,7 +54,7 @@ const TrendingCoinCard = ({ data }: { data: TrendingCoinDataType }) => {
           <img
             src={coin.large}
             alt={coin.name}
-            className="w-[35%] h-auto rounded-full absolute top-2/4 -right-12 -translate-y-2/4"
+            className="absolute lg:top-2/4 top-1 lg:-right-12 -right-3 -translate-y-2/4 lg:w-[35%] w-[5rem] h-auto rounded-full"
           />
         </>
       ) : (

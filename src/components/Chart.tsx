@@ -113,7 +113,7 @@ const Chart = ({ id }: { id: string }) => {
         type={type}
       />
 
-      <div className="flex">
+      <div className="flex md:flex-nowrap flex-wrap">
         <button
           className={`text-sm py-0.5 px-1.5 ml-2 bg-opacity-25 rounded capitalize ${
             type === "prices"
@@ -146,7 +146,7 @@ const Chart = ({ id }: { id: string }) => {
         </button>
 
         <button
-          className={`text-sm py-0.5 px-1.5 ml-2 bg-opacity-25 rounded capitalize ${
+          className={`text-sm py-0.5 px-1.5 ml-2 rounded bg-opacity-25 ${
             days === 7 ? "bg-cyan text-cyan" : "bg-gray-200 text-gray-100"
           }`}
           onClick={() => setDays(7)}
@@ -154,7 +154,7 @@ const Chart = ({ id }: { id: string }) => {
           7d
         </button>
         <button
-          className={`text-sm py-0.5 px-1.5 ml-2 bg-opacity-25 rounded capitalize ${
+          className={`text-sm py-0.5 px-1.5 ml-2 rounded bg-opacity-25 md:mt-0 mt-2  ${
             days === 14 ? "bg-cyan text-cyan" : "bg-gray-200 text-gray-100"
           }`}
           onClick={() => setDays(14)}
@@ -162,7 +162,7 @@ const Chart = ({ id }: { id: string }) => {
           14d
         </button>
         <button
-          className={`text-sm py-0.5 px-1.5 ml-2 bg-opacity-25 rounded capitalize ${
+          className={`text-sm py-0.5 px-1.5 ml-2 rounded bg-opacity-25 md:mt-0 mt-2 ${
             days === 30 ? "bg-cyan text-cyan" : "bg-gray-200 text-gray-100"
           }`}
           onClick={() => setDays(30)}

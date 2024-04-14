@@ -14,8 +14,8 @@ const Trending = () => {
   const handleResetTrending = trendingContextData?.handleResetTrending;
 
   return (
-    <section className="w-[80%] h-full flex flex-col mt-16 mb-24 relative">
-      <div className="flex flex-wrap justify-evenly w-full min-h-[60vh] py-8 border border-gray-100 rounded">
+    <section className="lg:w-[80%] w-[90%] h-full flex flex-col  mb-24 mt-16 relative">
+      <div className="w-full flex lg:flex-row flex-col items-center flex-wrap justify-evenly md:py-8 py-10 pb-0 border border-gray-100 rounded min-h-[60vh]">
         {trendData?.map((coin: TrendingCoinDataType) => (
           <Fragment key={coin.item.name}>
             <TrendingCoinCard data={coin} />

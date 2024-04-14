@@ -20,21 +20,21 @@ const SortFilter = () => {
   };
 
   return (
-    <label className="relative flex justify-center items-center">
-      <span className="font-bold mr-2">Sort by:</span>
+    <label className="relative flex sm:justify-center justify-start items-center mt-4 sm:mt-0">
+      <span className="mr-2 sm:font-bold font-medium sm:text-base text-sm w-16">Sort by:</span>
       <select
         name="sortby"
-        className="rounded bg-gray-200 text-base pl-2 pr-10 py-0.5 leading-4 capitalize outline-0"
+        className="rounded bg-gray-200 sm:text-base text-sm pl-2 pr-10 py-1.5 focus:outline-0 text-transparent appearance-none capitalize leading-4 w-full sm:w-48"
         onChange={handleSortByChange}
       >
         {SORT_OPTIONS.map(({ label, value }) => (
-          <option key={value} value={value}>
+          <option className="sm:text-base text-sm" key={value} value={value}>
             {label}
           </option>
         ))}
       </select>
       <img
-        className="w-[1rem] h-auto absolute right-0.5 top-2 pointer-events-none"
+        className="w-[1rem] absolute right-1 top-2 pointer-events-none"
         src={SelectIcon}
         alt="select"
       />

@@ -22,17 +22,17 @@ const PerPage = () => {
 
   return (
     <form
-      className="relative flex items-center font-nunito mr-12"
+      className="relative flex items-center font-nunito mr-6"
       onSubmit={handlePerPageSubmit}
     >
       <label
-        className="relative flex justify-center items-center mr-2 font-bold"
+        className="relative flex justify-center items-center mr-2"
         htmlFor="currency"
       >
         Per Page
       </label>
       <input
-        className="w-16 rounded bg-gray-200 placeholder:text-gray-100 pl-2 required outline-0 border border-transparent focus:border-cyan leading-4"
+        className="hover:appearance-none appearance-none w-10 h-6 rounded bg-gray-200 placeholder:text-gray-100 placeholder:text-sm required outline-0 border border-transparent focus:border-cyan leading-4 text-center text-sm"
         type="number"
         name="perpage"
         placeholder="10"
@@ -89,9 +89,9 @@ const Pagination = () => {
     cryptoContextData?.cryptoData.length >= perPage
   ) {
     return (
-      <div className="flex items-center">
+      <div className="flex md:flex-row flex-col items-center md:mt-0 mt-4 ">
         <PerPage />
-        <ul className="flex items-center justify-end text-sm">
+        <ul className="flex items-center justify-end  text-sm sm:mt-0 mt-4">
           <li className="flex items-center">
             <button
               className="outline-0 hover:text-cyan w-8"
@@ -108,7 +108,7 @@ const Pagination = () => {
             (page === totalPages && (
               <li>
                 <button
-                  className="outline-0 hover:text-cyan rounded-full w-8 h-8 flex items-center justify-center text-lg"
+                  className="outline-0 hover:text-cyan rounded-full w-10 h-10 flex items-center justify-center text-lg"
                   onClick={handleMultiStepPrevious}
                 >
                   ...
@@ -118,7 +118,7 @@ const Pagination = () => {
           {page - 1 !== 0 && (
             <li>
               <button
-                className="outline-0 hover:text-cyan rounded-full w-8 h-8 flex items-center justify-center bg-gray-200 mx-1.5"
+                className="outline-0 hover:text-cyan rounded-full w-10 h-10 flex items-center justify-center bg-gray-200 mx-1.5"
                 onClick={handlePrevious}
               >
                 {page - 1}
@@ -127,7 +127,7 @@ const Pagination = () => {
           )}
           <li>
             <button
-              className="outline-0 rounded-full w-8 h-8 flex items-center justify-center mx-1.5 bg-cyan text-gray-300"
+              className="outline-0 rounded-full w-10 h-10 flex items-center justify-center mx-1.5 bg-cyan text-gray-300"
               disabled
             >
               {page}
@@ -136,7 +136,7 @@ const Pagination = () => {
           {page + 1 !== totalPages && page !== totalPages && (
             <li>
               <button
-                className="outline-0 hover:text-cyan rounded-full w-8 h-8 flex items-center justify-center bg-gray-200 mx-1.5"
+                className="outline-0 hover:text-cyan rounded-full w-10 h-10 flex items-center justify-center bg-gray-200 mx-1.5"
                 onClick={handleNext}
               >
                 {page + 1}
@@ -146,7 +146,7 @@ const Pagination = () => {
           {page + 1 !== totalPages && page !== totalPages && (
             <li>
               <button
-                className="outline-0 hover:text-cyan rounded-full w-8 h-8 flex items-center justify-center text-lg"
+                className="outline-0 hover:text-cyan rounded-full w-10 h-10 flex items-center justify-center text-lg"
                 onClick={handleMultiStepNext}
               >
                 ...
@@ -156,7 +156,7 @@ const Pagination = () => {
           {page !== totalPages && (
             <li>
               <button
-                className="outline-0 hover:text-cyan rounded-full w-8 h-8 flex items-center justify-center bg-gray-200 mx-1.5"
+                className="outline-0 hover:text-cyan rounded-full w-10 h-10 flex items-center justify-center bg-gray-200 mx-1.5"
                 onClick={() => cryptoContextData?.setPage(totalPages)}
               >
                 {totalPages}

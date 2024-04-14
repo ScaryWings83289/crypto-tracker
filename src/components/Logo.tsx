@@ -7,9 +7,9 @@ import LogoSvg from "@Assets/logo.svg";
 const Logo = () => (
   <Link
     to="/"
-    className="absolute top-[1.5rem] left-[1.5rem] [text-decoration:none] text-lg text-cyan flex items-center"
+    className="absolute sm:top-[1.5rem] top-[1rem] sm:left-[1.5rem] left-[1rem] [text-decoration:none] text-cyan cursor-pointer flex items-center sm:text-lg text-md"
   >
-    <img src={LogoSvg} alt="cryptobucks" />
+    <img className="w-[25%] h-auto" src={LogoSvg} alt="cryptobucks" />
     <span>CryptoBucks</span>
   </Link>
 );
