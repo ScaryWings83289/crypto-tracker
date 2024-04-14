@@ -2,7 +2,7 @@
 import { ChangeEvent, useContext } from "react";
 
 //* Utils Imports */
-import { SORT_OPTIONS } from "@Src/data/CryptoData"
+import { SORT_OPTIONS } from "@Data/CryptoData"
 
 //* Context Imports */
 import { CryptoContext } from "@Context/CryptoContext";
